@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<!--專門寫html的地方-->
+
+<body>
+    <h1>這是練習的地方</h1>
+    <!--ＪＳ呼叫符號：#-->
+    <div id="只能唯一的"></div>
+    <div id="only"></div>
+
+
+    <!--ＪＳ呼叫符號：.-->
+    <div class="可以有很多"></div>
+    <div class="many"></div>
+    <div class="many"></div>
+    <div class="many"></div>
+
+    <div id="test"></div>
+    <div id="_print"></div>
+
+
+    <!--專門寫JS的地方-->
+    <script>
+
+
+        // // array + object
+        const color = [
+            {
+                "style": "pink",
+                "num": 1
+            },
+            {
+                "style": "blue",
+                "num": 2
+            }
+        ]
+        const ppl = [
+            {
+                "name": "Jacky",
+                "num": 1
+            },
+            {
+                "name": "Gary",
+                "num": 2
+            },
+            {
+                "ar": "Kevin",
+                "num": 2
+            }
+        ]
+        const pr = [
+            {
+                "ar": "Jacky",
+                "num": 1
+            },
+            {
+                "ar": "Gary",
+                "num": 2
+            },
+            {
+                "ar": "Kevin",
+                "num": 2
+            }
+        ]
+        const hw = [
+            {
+                "ar": "Jacky",
+                "num": 1,
+                "fav": ["grey", "blue", "yellow"]
+            },
+            {
+                "ar": "Gary",
+                "num": 2,
+                "fav": ["white", "black", "grey"]
+            },
+            {
+                "ar": "Kevin",
+                "num": 3,
+                "fav": ["blue", "purple", "green"]
+            }
+        ]
+        const hw2 = [
+            {
+                "name": "Nina",
+                "age": "21",
+                "color": [
+                    {
+                        "index": 1,
+                        "yellow": "bright yellow"
+                    },
+                    {
+                        "index": 2,
+                        "blue": "dark blue"
+                    },
+                    {
+                        "index": 3,
+                        "red": "deep red"
+                    }
+                ]
+            },
+            {
+                "name": "Gavin",
+                "age": "20",
+                "color": [
+                    {
+                        "index": 1,
+                        "green": "grace green"
+                    },
+                    {
+                        "index": 2,
+                        "blue": "dark blue"
+                    },
+                    {
+                        "index": 3,
+                        "grey": "bright grey"
+                    }
+                ]
+            }
+        ]
+        const store = [
+            {
+                "id": 1,
+                "store_message": {
+                    "id":1,
+                    "status": "not start",
+                    "name": "yangming",
+                    "phone": "03-3112300",
+                    "address": "蘆竹",
+                    "mail":""
+
+                },
+                "sso_message": {
+                    "id":1,
+                    "status": "enable",
+                    "type": "google",
+                    "pin": 5833,
+                    "create_time": "2020/12/30 19:11"
+                }
+            },
+            {
+                "id": 2,
+                "store_status": "pending",
+                "store_name": "lin",
+                "phone": "03-2838492",
+                "address": "桃園",
+                "sso_status": "able",
+                "sso_type": "FB",
+                "pin": 3322,
+                "create_time": "2020/03/15 09:33"
+            },
+            {
+                "id": 3,
+                "store_status": "opened",
+                "store_name": "bb",
+                "phone": "03-2223343",
+                "address": "大園",
+                "sso_status": "able",
+                "sso_type": "google",
+                "pin": 9385,
+                "create_time": "2020/08/06 12:06"
+            }
+        ]
+
+        console.log(store)
+
+
+        // querySelector : 選擇器
+        // 把div的東西在JS裡面宣告裝起來
+        // const o = document.querySelector("#only")
+        // console.log(o)
+
+        // 只會抓第一個:querySelector
+        const m = document.querySelector(".many")
+        console.log(m)
+
+        // 抓全部:querySelectorAll
+        const _many = document.querySelectorAll(".many")
+        console.log(_many)
+
+        // console.log(typeof Many)
+
+        // 如果不一樣？
+        for (let a = 0; a < _many.length; a++) {
+            for (let b = 0; b < hw[a].fav.length; b++) {
+                // _many[a].innerHTML += hw[a].ar +"&"+ hw[a].fav[b] + ",  "
+            }
+            // console.log(_many[a])
+        }
+
+        //-------------------------------------------
+
+        const t = document.querySelector("#test")
+        console.log(t)
+
+        //-------------------------------------------
+        // innerHTML => 是JS匯入文字到html顯示的方法
+        // (html的宣告).innerHTML = (要加入的東西)
+        // JS相關的東西.innerHTML = 網頁的東西
+
+        // div中id的方法{
+        test.innerHTML = "JS方法匯入html文字"
+        only.innerHTML = "<h2>也可以用設定的方式，設定文字大小</h2>"
+        // // JS物件匯入                    JS文字換行方法
+        t.innerHTML = color[1].style + "<br>"
+        // // 原內容再加其他東西的時候
+        test.innerHTML += color[0].style
+        // // 要套用div設定的時後
+        test.innerHTML += "<h1>" + color[1].style + "</h1><br>"
+
+        // for(宣告變數的初始值; 執行迴圈的條件; 當變數符合條件時要做的事)
+        // for (let i = 0; i < color.length; i++) {
+        //     console.log(color[i].style)
+        //     test.innerHTML += color[i].style + "<br>"
+        // }
+
+        // for (let b = 0; b < ppl.length; b++) { 
+        //     console.log(ppl[b].name)
+        //     only.innerHTML += ppl[b].name + "<br>"
+        // }
+
+        // for (let w = 0; w < pr.length; w++) {
+        //     _print.innerHTML += pr[w].ar + "<br>"
+        // }
+
+
+        // div中class的方法
+
+
+
+    </script>
+</body>
+
+</html>

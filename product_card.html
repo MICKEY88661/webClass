@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice_Card</title>
+    <!--# : id的標記方法-->
+    <!--. : class的標記方法-->
+    <!--吃標籤就不需要有標記符號-->
+    <!--hover:滑鼠移動會出現的底部渲染-->
+    <!--wrap:類似小的container，只包一組資料(他只是一個名字)-->
+    <style>
+        img {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            width: 150px;
+        }
+
+        img:hover {
+            box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+        }
+    </style>
+
+</head>
+
+<body>
+    <!--p: 純文字標籤-->
+    <div id="productCard">
+        <!-- <div class="product-wrap">
+            <div>標題</div>
+            <img src="https://www.w3schools.com/tags/img_girl.jpg" alt="練習用">
+            <p>＄10</p> -->
+    </div>
+
+    </div>
+
+</body>
+
+<script>
+    // 用變數帶入方法來顯示資料
+    // 一般做法
+    const name = "Nina"
+    const intro = "My name is "
+    // console.log(intro + name)
+
+    // 快速做法:使用重音符號 `
+    const intro_new = `My name is ${name}`
+    // console.log(intro_new)
+
+    const productCard = document.querySelector("#productCard")
+
+    // for (let i = 0; i < 3; i++) {
+    //     productCard.innerHTML += 
+    //         `<div class="product-wrap">
+    //         <img src="https://www.w3schools.com/tags/img_girl.jpg" alt="練習用">
+    //         <div>標題</div>
+    //         <p>＄10${i}</p>`
+    // }
+
+    const arr = [
+        {
+            "title": "奸詐狗狗",
+            "img": "https://images2.gamme.com.tw/news2/2017/52/41/qZqZo6SVk6ecq6Q.jpg",
+            "intro": "奸詐的微笑"
+        },
+        {
+            "title": "狗狗",
+            "img": "https://assets.juksy.com/files/articles/90814/800x_100_w-5ce41f432bb5d.jpg",
+            "intro": "可愛狗狗"
+        },
+        {
+            "title": "睡覺狗狗",
+            "img": "https://cdn2.ettoday.net/images/4703/4703917.jpg",
+            "intro": "在地上睡覺的狗狗"
+        }
+    ]
+
+    for (let p = 0; p < arr.length; p++) {
+        productCard.innerHTML +=
+            `<div class="product-wrap">
+             <img src="${arr[p].img}" alt="練習用">
+             <div>${arr[p].title}</div>
+             <p>${arr[p].intro}</p>`
+    }
+
+
+</script>
+
+</html>
