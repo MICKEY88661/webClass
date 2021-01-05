@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        img {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            width: 150px;
+        }
+
+        img:hover {
+            box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+        }
+
+        .productCard {
+            border: 1px solid #ddd;
+            border-radius: 2px;
+            padding: 20px;
+            width: 200px;
+        }
+
+        .center {
+            margin: 50px auto;
+        }
+
+        .s {
+            text-decoration: line-through;
+        }
+
+        .offer {
+            font-weight: bold;
+            font-size: x-large;
+        }
+
+        #productCards {
+            position: absolute;
+            left: 0px;
+            margin-left: 50px;
+        }
+
+        .productCard {
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // api
+        fetch('http://localhost:3000/q')
+            .then(response => response.json())
+            .then(commits => {
+            });
+    </script>
+</body>
+
+</html>
