@@ -5,59 +5,140 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
-    <style>
-        img {
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            padding: 5px;
-            width: 150px;
-        }
-
-        img:hover {
-            box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
-        }
-
-        .productCard {
-            border: 1px solid #ddd;
-            border-radius: 2px;
-            padding: 20px;
-            width: 200px;
-        }
-
-        .center {
-            margin: 50px auto;
-        }
-
-        .s {
-            text-decoration: line-through;
-        }
-
-        .offer {
-            font-weight: bold;
-            font-size: x-large;
-        }
-
-        #productCards {
-            position: absolute;
-            left: 0px;
-            margin-left: 50px;
-        }
-
-        .productCard {
-            margin: 20px;
-        }
-    </style>
 </head>
 
 <body>
-    <script>
-        // api
-        fetch('http://localhost:3000/q')
-            .then(response => response.json())
-            .then(commits => {
+    <div id="res">
+    </div>
+
+    <!-- <script>
+        res()
+
+        function res() {
+
+            // api
+            fetch('http://localhost:3000/q')
+                .then(response => asd(response))
+                .then(commits => {
             });
+
+            const div = document.querySelector("#id")
+
+            div.innerHTML = response
+        }
+
+    </script> -->
+
+    <div id='intro'></div>
+    <script>
+        // // api
+        // fetch('http://localhost:3000/q')
+        //     .then(response => _printProductCard(response))
+        //     .then((jsonData) => { })
+
+        // function _printProductCard(jsonData) {
+        //     for (let c = 0; c < jsonData.length; c++) {
+        //         productCards +=
+        //             `<div class="product-wrap" 
+        //           style=" margin: 50px ;
+        //                   border: 1px solid #ddd;
+        //                   border-radius: 2px;
+        //                   padding: 20px;
+        //                   width: 200px;
+        //                   display:inline-block;
+        //                   text-align: center">
+
+        //     <a href="${jsonData[c].link}">
+        //          <img src="${jsonData[c].img}" 
+        //          alt="${jsonData[c].subtitle}+${jsonData[c].title}" 
+        //          style="border: 1px solid #ddd;
+        //                 border-radius: 4px;
+        //                 padding: 5px;
+        //                 width: 150px;">
+        //      </a>
+
+        //     <h2>${jsonData[c].subtitle}</h1>
+        //     <h3>${jsonData[c].title}</h4>
+        //     <p><span style="color:gray;
+        //                     text-decoration: line-through;">
+        //                     $ ${jsonData[c].originalPrice}
+        //         </span>
+        //          　 
+        //         <span style="color:red;
+        //                      font-weight: bold;
+        //                      font-size: x-large;">
+        //                      $ ${jsonData[c].specialOffer}
+        //         </span>
+        //     </p>
+        // </div>`
+        //     }
+        // }
+        // fetch('http://localhost:3000/q', {})
+        //     .then((response) => {
+        //         // 這裡會得到一個 ReadableStream 的物件
+        //         console.log(response);
+        //         // 可以透過 blob(), json(), text() 轉成可用的資訊
+        //         return response.json();
+        //     }).then((jsonData) => {
+        //         console.log(jsonData);
+        //     }).catch((err) => {
+        //         console.log('錯誤:', err);
+        // });
+
+        fetch('http://localhost:3000/q', {})
+            .then((response) => {
+                console.log(response);
+                return response.json();
+            }).then((jsonData) => {
+                var myElement = document.getElementById("intro");
+                myElement.innerHTML = _printProductCard(jsonData);
+            }).catch((err) => {
+                console.log('錯誤:', err);
+            });
+
+        function _printProductCard(jsonData) {
+            let A = []
+            for (let c = 0; c < jsonData.length; c++) {
+                A +=
+                    `<div class="product-wrap" 
+                  style=" margin: 50px ;
+                          border: 1px solid #ddd;
+                          border-radius: 2px;
+                          padding: 20px;
+                          width: 200px;
+                          display:inline-block;
+                          text-align: center">
+
+                    <a href="${jsonData[c].link}">
+                        <img src="${jsonData[c].img}" 
+                 alt="${jsonData[c].subtitle}+${jsonData[c].title}" 
+                 style="border: 1px solid #ddd;
+                        border-radius: 4px;
+                        padding: 5px;
+                        width: 150px;">
+             </a>
+
+            <h2>${jsonData[c].subtitle}</h1>
+            <h3>${jsonData[c].title}</h4>
+            <p><span style="color:gray;
+                            text-decoration: line-through;">
+                            $ ${jsonData[c].originalPrice}
+                </span>
+                 　 
+                <span style="color:red;
+                             font-weight: bold;
+                             font-size: x-large;">
+                             $ ${jsonData[c].specialOffer}
+                </span>
+            </p>
+        </div>`
+            }
+            return A
+        }
     </script>
+
+
+
 </body>
 
 </html>
