@@ -1,14 +1,14 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/mickey', (req, res) => res.send('mickey page'));
-router.get('/nina',errorFunc, (req, res) => res.send('nina page'));
-
 // Error-handling middleware
 router.use(function (err, req, res, next) {
     // console.error(err.stack)
     res.status(500).send('Something broke!')
 })
+
+router.get('/mickey', (req, res) => res.send('mickey page'));
+router.get('/nina', errorFunc, (req, res) => res.send('nina page'));
 
 module.exports = router;
 
@@ -19,7 +19,5 @@ function errorFunc(req, res, next) {
     } catch (error) {
         console.log('error!!');
         next(error);
-        return;
     }
-    next();
 }
