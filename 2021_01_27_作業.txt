@@ -1,0 +1,6 @@
+let vs const :
+    const 常數不能重複指定值，也不能重複宣告。
+
+    JS 中陣列（array）和物件（object）都是屬於 reference type
+
+    const 和 let 一樣都是block-scoped
