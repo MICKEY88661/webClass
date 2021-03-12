@@ -1,8 +1,10 @@
 const mongoose = require('mongoose');
+const config = require('config');
+const db = config.get('mongoURI');
 
 const connectDB = async() => {
     try {
-        await mongoose.connect('mongodb+srv://mickey:CL0F0anFpzFHYemb@cluster0.u7imu.mongodb.net/test?retryWrites=true&w=majority',{
+        await mongoose.connect(db,{
             useNewUrlParser: true,
             useUnifiedTopology: true,
             useFindAndModify: false,
