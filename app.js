@@ -4,6 +4,8 @@ const app = express()
 
 connectDB()
 
+app.use(express.json({ extended: false }))
+
 // Built-in middleware
 app.use(express.static(__dirname + '/public '));
 
